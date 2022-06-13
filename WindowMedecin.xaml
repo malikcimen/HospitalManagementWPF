@@ -1,0 +1,40 @@
+﻿<Window x:Class="NorthernLightsHospital.WindowMedecin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NorthernLightsHospital"
+        mc:Ignorable="d"
+        Title="Doctor Panel" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFF31E1E" Offset="0.397"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="lbl_title" Content="Doctor" Margin="337,26,326,0" VerticalAlignment="Top" FontSize="30" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center" Width="129" Height="46"/>
+        <ListView x:Name="list_admissions" VerticalAlignment="Top" Margin="55,132,388,0" Height="197" ItemsSource="{Binding}" SelectionChanged="list_admissions_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="NSS" Width="70" DisplayMemberBinding="{Binding NSS}"/>
+                    <GridViewColumn Header="Admission" Width="90" DisplayMemberBinding="{Binding dateAdmission, StringFormat=d}"/>
+                    <GridViewColumn Header="Surgery" Width="90" DisplayMemberBinding="{Binding dateSurgery, StringFormat=d}"/>
+                    <GridViewColumn Header="Medecin" Width="80" DisplayMemberBinding="{Binding idMedecin}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="lbl_listeAdmissions" Content="Admissions List" Margin="148,99,494,0" FontSize="18" FontFamily="Bahnschrift SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center" Width="152" Height="28"/>
+        <Button x:Name="btn_conge" Content="Leave" HorizontalAlignment="Left" Margin="175,362,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" Width="104" Click="btn_conge_Click" Height="24"/>
+        <Button x:Name="btn_retour" Content="Return" Margin="10,10,679,377" FontFamily="Bahnschrift SemiBold" FontSize="14" Click="btn_retour_Click"/>
+        <TextBox x:Name="txt_nomPatient" HorizontalAlignment="Left" Height="23" Margin="148,334,0,0" FontFamily="Bahnschrift SemiBold" FontSize="14" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Text="{Binding Mode=OneWay}" Width="247"/>
+        <Label x:Name="lbl_nomPatient" Content="Full name:" HorizontalAlignment="Left" Margin="50,334,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+        <Border BorderBrush="Black" BorderThickness="3" Margin="442,119,16,47" Width="325" Height="245">
+            <Canvas>
+                <Image Height="279" Width="319" Source="Images/medecin.jpg" Canvas.Top="-20"/>
+            </Canvas>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" Margin="45,99,0,0" VerticalAlignment="Top" Width="371"/>
+
+    </Grid>
+</Window>

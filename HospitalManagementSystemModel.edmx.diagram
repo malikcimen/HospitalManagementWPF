@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc18023ac54d49db929e383492ecfb69" Name="Diagram1">
+        <EntityTypeShape EntityType="HospitalDatabaseModel.Admission" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalDatabaseModel.Assurance" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalDatabaseModel.Bed" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalDatabaseModel.Departement" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalDatabaseModel.Doctor" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalDatabaseModel.Patient" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalDatabaseModel.TypeBed" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="HospitalDatabaseModel.FK_Admission_Lit" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalDatabaseModel.FK_Admission_Medecin" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalDatabaseModel.FK_Admission_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalDatabaseModel.FK_Patient_Assurance" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalDatabaseModel.FK_Lit_Departement" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalDatabaseModel.FK_Lit_TypeLit" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

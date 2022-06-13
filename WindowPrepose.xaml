@@ -1,0 +1,69 @@
+﻿<Window x:Class="NorthernLightsHospital.WindowPrepose"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NorthernLightsHospital"
+        mc:Ignorable="d"
+        Title="Employee Panel" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="Azure" Offset="0.287"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Button x:Name="btn_retour" Content="Return" Margin="12,11,677,375" FontFamily="Bahnschrift SemiBold" FontSize="14" Click="btn_retour_Click"/>
+        <Label x:Name="lbl_title" Content="Employee" HorizontalAlignment="Center" Margin="342,15,304,0" VerticalAlignment="Top" FontSize="30" FontFamily="Bahnschrift SemiBold" Width="148"/>
+        <Grid HorizontalAlignment="Left" Height="139" Margin="45,90,0,0" VerticalAlignment="Top" Width="711">
+            <Label Content="Label" HorizontalAlignment="Left" Height="10" Margin="360,59,0,0" VerticalAlignment="Top" Width="1"/>
+            <Label x:Name="lbl_nom" Content="Last name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <TextBox x:Name="txt_nom" HorizontalAlignment="Left" Height="23" Margin="88,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Label x:Name="lbl_prenom" Content="Name:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <TextBox x:Name="txt_prenom" HorizontalAlignment="Left" Height="23" Margin="88,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Label x:Name="lbl_naissance" Content="Birthday:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <DatePicker x:Name="date_naissance" HorizontalAlignment="Left" Margin="88,66,0,0" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" Height="23"/>
+            <Label x:Name="lbl_adresse" Content="Adresse:" HorizontalAlignment="Left" Margin="255,10,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <TextBox x:Name="txt_adresse" HorizontalAlignment="Left" Height="23" Margin="333,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Label x:Name="lbl_ville" Content="Ville:" HorizontalAlignment="Left" Margin="255,38,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <TextBox x:Name="txt_ville" HorizontalAlignment="Left" Height="23" Margin="333,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Label x:Name="lbl_province" Content="Province:" Margin="255,66,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" HorizontalAlignment="Left" Width="67"/>
+            <ComboBox x:Name="cb_province" HorizontalAlignment="Left" Margin="333,66,0,0" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" ItemsSource="{Binding}" SelectedIndex="0"/>
+            <Label x:Name="lbl_codePostal" Content="Code :" HorizontalAlignment="Left" Margin="494,10,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <TextBox x:Name="txt_codePostal" HorizontalAlignment="Left" Height="23" Margin="581,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Label x:Name="lbl_telephone" Content="Telephone:" HorizontalAlignment="Left" Margin="494,37,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <TextBox x:Name="txt_telephone" HorizontalAlignment="Left" Height="23" Margin="581,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Button x:Name="btn_enregistrerPatient" Content="To register" HorizontalAlignment="Left" Margin="333,94,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" Width="120" Height="23" Click="btn_enregistrerPatient_Click"/>
+            <Label x:Name="lbl_assurance" Content="Assurance: " Margin="494,65,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" HorizontalAlignment="Left"/>
+            <ComboBox x:Name="cb_assurance" HorizontalAlignment="Left" Margin="581,66,0,0" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" ItemsSource="{Binding}" SelectedIndex="0"/>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="129" VerticalAlignment="Top" Width="711"/>
+        </Grid>
+        <Label x:Name="lbl_patient1" Content="Add Patient" HorizontalAlignment="Left" Margin="351,56,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="16" Width="139"/>
+        <Grid HorizontalAlignment="Left" Height="144" Margin="45,251,0,0" VerticalAlignment="Top" Width="711">
+            <Label Content="Label" HorizontalAlignment="Left" Height="10" Margin="360,59,0,0" VerticalAlignment="Top" Width="1"/>
+            <Label x:Name="lbl_patient" Content="Patient:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Label x:Name="lbl_departement" Content="Department:" HorizontalAlignment="Left" Margin="239,10,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Label x:Name="lbl_medecin" Content="Doctor:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <Button x:Name="btn_enregistrerAdmission" Content="To register" HorizontalAlignment="Left" Margin="334,113,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" Width="120" Height="23" Click="btn_enregistrerAdmission_Click"/>
+            <ComboBox x:Name="cb_patient" HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Width="145" FontFamily="Bahnschrift SemiBold" FontSize="14" ItemsSource="{Binding}" SelectionChanged="cb_patient_SelectionChanged"/>
+            <ComboBox x:Name="cb_departement" HorizontalAlignment="Left" Margin="334,10,0,0" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" ItemsSource="{Binding }" SelectionChanged="cb_departement_SelectionChanged"/>
+            <ComboBox x:Name="cb_medecin" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top" Width="145" FontFamily="Bahnschrift SemiBold" FontSize="14" ItemsSource="{Binding }"/>
+            <CheckBox x:Name="check_chirurgie" Content="Surgery" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" Width="84" Checked="check_chirurgie_Checked" Unchecked="check_chirurgie_Unchecked"/>
+            <DatePicker x:Name="date_chirurgie" HorizontalAlignment="Left" Margin="113,94,0,0" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" IsEnabled="False" Height="23"/>
+            <Label x:Name="lbl_admission1" Content="Admission:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <DatePicker x:Name="date_admission" HorizontalAlignment="Left" Margin="113,66,0,0" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" Height="23"/>
+            <Label x:Name="lbl_extras" Content="Options:" HorizontalAlignment="Left" Margin="239,66,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" RenderTransformOrigin="0.344,0.531"/>
+            <CheckBox x:Name="check_television" Content="Television" HorizontalAlignment="Left" Margin="334,71,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" Width="84" Checked="check_television_Checked" Unchecked="check_television_Unchecked"/>
+            <CheckBox x:Name="check_telephone" Content="Telephone" HorizontalAlignment="Left" Margin="334,92,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14" Width="84" Checked="check_telephone_Checked" Unchecked="check_telephone_Unchecked"/>
+            <Label x:Name="lbl_prix" Content="Daily Price:" HorizontalAlignment="Left" Margin="470,84,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <TextBox x:Name="txt_prix" HorizontalAlignment="Left" Height="23" Margin="581,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" IsReadOnly="True"/>
+            <Label x:Name="lbl_typeLit" Content="Type Lit:" HorizontalAlignment="Left" Margin="239,38,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <ComboBox x:Name="cb_typeLit" HorizontalAlignment="Left" Margin="334,38,0,0" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift SemiBold" FontSize="14" ItemsSource="{Binding }" SelectionChanged="cb_typeLit_SelectionChanged"/>
+            <Label x:Name="lbl_lit" Content="Beds Available:" HorizontalAlignment="Left" Margin="470,10,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="14"/>
+            <ListBox x:Name="lb_litsDispo" HorizontalAlignment="Left" Height="70" Margin="583,10,0,0" VerticalAlignment="Top" Width="118" ItemsSource="{Binding}" SelectionChanged="lb_litsDispo_SelectionChanged"/>
+        </Grid>
+        <Label x:Name="lbl_admission" Content="Add Admission" HorizontalAlignment="Left" Margin="341,222,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="16"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="144" Margin="45,251,0,0" VerticalAlignment="Top" Width="711"/>
+
+    </Grid>
+</Window>

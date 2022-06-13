@@ -1,0 +1,53 @@
+﻿<Window x:Class="NorthernLightsHospital.WindowAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NorthernLightsHospital"
+        mc:Ignorable="d"
+        Title="Admin" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FF91F2FF" Offset="0.333"/>
+            <GradientStop Color="#FF010303" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Label x:Name="lbl_title" Content="Admin Panel" HorizontalAlignment="Center" Margin="286,13,218,0" VerticalAlignment="Top" FontSize="30" FontFamily="Bahnschrift SemiBold" Width="290"/>
+        <Grid Margin="41,64,426,21" Height="336">
+            <Label x:Name="lbl_ajoutMedecin" Content="Add Doctor" HorizontalAlignment="Center" Margin="96,10,104,0" VerticalAlignment="Top" FontSize="18" FontFamily="Bahnschrift SemiBold" Width="130"/>
+            <Label x:Name="lbl_nom" Content="Last Name" HorizontalAlignment="Left" Margin="42,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.095" FontSize="16" FontFamily="Bahnschrift SemiBold"/>
+            <Label x:Name="lbl_prenom" Content="First name" HorizontalAlignment="Left" Margin="42,70,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Bahnschrift SemiBold"/>
+            <TextBox x:Name="txt_nom" HorizontalAlignment="Left" Margin="170,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" FontSize="16" FontFamily="Bahnschrift SemiBold"/>
+            <TextBox x:Name="txt_prenom" HorizontalAlignment="Left" Margin="170,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" FontSize="16" FontFamily="Bahnschrift SemiBold"/>
+            <Button x:Name="btn_ajouter" Content="Add" Margin="10,110,229,201" Height="25" FontFamily="Bahnschrift SemiBold" FontSize="14" Click="btn_ajouter_Click"/>
+            <Button x:Name="btn_effacer" Content="Delete" Margin="229,110,10,201" Height="25" FontFamily="Bahnschrift SemiBold" FontSize="14" Click="btn_effacer_Click"/>
+            <Button x:Name="btn_modifier" Content="Edit" Margin="119,110,120,201" Height="25" FontFamily="Bahnschrift SemiBold" FontSize="14" Click="btn_modifier_Click" />
+            <Border BorderThickness="3" BorderBrush="#FF000000" Margin="48,140,37,28" >
+                <Canvas>
+                    <Image HorizontalAlignment="Left" Height="162" VerticalAlignment="Bottom" Width="226" Source="Images/admin.jpg" Stretch="Fill"/>
+                </Canvas>
+            </Border>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="41,64,0,0" HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="327"/>
+
+
+        <Grid Height="336" Margin="412,64,34,0" VerticalAlignment="Top">
+            <Label x:Name="lbl_listeMedecin" Content="Doctors List" HorizontalAlignment="Center" Margin="107,10,111,0" VerticalAlignment="Top" FontSize="18" FontFamily="Bahnschrift SemiBold" Width="130" Height="32"/>
+            <ListView x:Name="listView_medecin" Height="249" Margin="10,47,10,0" VerticalAlignment="Top" SelectionChanged="listView_medecin_SelectionChanged" ItemsSource="{Binding}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding idMedecin}"/>
+                        <GridViewColumn Header="Last Name" Width="110" DisplayMemberBinding="{Binding name}"/>
+                        <GridViewColumn Header="First Name" Width="110" DisplayMemberBinding="{Binding lastName}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="btn_supprimer_Copy" Content="To delete" Margin="10,301,250,10" Height="25" FontFamily="Bahnschrift SemiBold" FontSize="14" Click="btn_supprimer_Click"/>
+        </Grid>
+        <Button x:Name="btn_retour" Content="Return" Margin="10,10,679,376" FontFamily="Bahnschrift SemiBold" FontSize="14" Click="btn_retour_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="336" Margin="412,64,0,0" VerticalAlignment="Top" Width="348"/>
+    </Grid>
+</Window>
